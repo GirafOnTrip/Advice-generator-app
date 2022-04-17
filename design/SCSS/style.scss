@@ -1,0 +1,131 @@
+@use 'mixins' as *;
+@use 'variables'as v;
+@use 'breakpoints' as *;
+
+
+/* MAIN PARAMETERS */
+
+*{
+    padding: 0; 
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    
+    @include flexbox; 
+    min-height: 100vh; 
+    background-color: v.$bg-color;
+    font-size: 1.75rem;
+    font-family: Manrope,Arial, Helvetica, sans-serif;
+    @include vsm-mobile {
+
+        font-size: 1.50rem;
+    }
+}
+
+/* Start param box */
+
+.box {
+    
+    position: relative;
+    text-align: center;
+    max-width: 33.75rem;
+    min-width: 33.75rem;
+    height: fit-content;
+    background-color: v.$box-color;
+    border-radius: 0.938rem;
+    padding-top: 2.813rem;
+
+    @include mobile{
+        
+        padding-top: 2.5rem;
+        max-width: 21.875rem;
+        min-width: 21.875rem;
+    }
+
+    @include sm-mobile{
+
+        margin: 0 1.25rem;
+    }
+
+    @include vsm-mobile {
+
+        max-width:18.75rem;
+        min-width:18.75rem;
+    }
+    
+        &__advice{
+            
+            font-size: small;
+            color: hsl(150, 100%, 66%);
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;  
+        }
+        
+        &__quote{
+            
+            color: v.$text-color;
+            margin: 1.563rem 2.813rem 2.188rem 2.813rem;
+            font-weight: 600; 
+            
+            @include mobile{
+                
+                margin: 1.875rem 1.563rem 1.563rem 1.563rem;
+            }
+        }
+        
+        &__divider{
+
+            margin-bottom: 4.063rem;
+            content: v.$dividerDesktop;
+
+            @include mobile{
+            
+            content: v.$dividerMobile;
+            width: 80%;    
+            }
+        }
+        
+        &__bg-dice{
+            
+            background: v.$dice-color;
+            width: 4.063rem;
+            height: 4.063rem;
+            border-radius: 6.25rem;
+            @include flexbox; 
+            
+            position: absolute;
+            bottom:-1.875rem;
+            left:43.8%;
+            
+            @include mobile {
+                
+            left:40.8%;
+            }
+
+            @include vsm-mobile {
+
+                left:39.3%;
+            }
+            
+            &:hover{
+                
+                -webkit-box-shadow: 0 0 35px 0 rgba(0,255,165,0.7); 
+                box-shadow: 0 0 35px 0 rgba(0,255,165,0.7);
+                cursor: pointer;    
+            }
+        }
+}
+
+/* End param box */
+
+/* FOOTER */
+
+footer{
+    
+    display:none;
+}
+
+            
+            
